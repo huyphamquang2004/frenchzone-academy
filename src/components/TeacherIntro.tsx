@@ -1,4 +1,4 @@
-import { Award } from "lucide-react";
+import { Award, BookOpenCheck } from "lucide-react";
 import { teacherIntro } from "@/lib/content";
 
 export function TeacherIntro() {
@@ -15,6 +15,10 @@ export function TeacherIntro() {
           Học với Phạm Quang Huy
         </h2>
         <p className="mt-4 leading-8 text-muted">{teacherIntro}</p>
+        <div className="mt-6 inline-flex items-center gap-3 rounded-2xl border border-blue-100 bg-blue-50 px-4 py-3 text-sm font-semibold text-accent">
+          <BookOpenCheck aria-hidden="true" className="h-5 w-5" />
+          Có định hướng học tiếp qua hệ thống Frenchzone tại fzone.site
+        </div>
       </div>
     </section>
   );

@@ -6,6 +6,8 @@ export type ClassCardContent = {
   title: string;
   description: string;
   price: string;
+  bestFor: string;
+  focus: string;
 };
 
 export type ClassPageContent = ClassCardContent & {
@@ -46,6 +48,8 @@ export const classCards: ClassCardContent[] = [
     description:
       "Dành cho người chưa từng học tiếng Pháp, mất gốc hoặc muốn học lại từ đầu một cách bài bản.",
     price: "150.000đ/buổi",
+    bestFor: "Chưa học hoặc mất gốc",
+    focus: "Phát âm, nền tảng A1, thói quen học",
   },
   {
     level: "A2",
@@ -54,6 +58,8 @@ export const classCards: ClassCardContent[] = [
     description:
       "Dành cho người đã có nền tảng A1 nhưng muốn củng cố ngữ pháp, từ vựng, nghe đọc và phản xạ nói.",
     price: "170.000đ/buổi",
+    bestFor: "Đã học A1 nhưng chưa chắc",
+    focus: "Củng cố nền tảng, giao tiếp quen thuộc",
   },
   {
     level: "B1",
@@ -62,6 +68,8 @@ export const classCards: ClassCardContent[] = [
     description:
       "Dành cho người đã có nền tảng A2/A2+ và muốn cải thiện 4 kỹ năng hoặc chuẩn bị DELF B1.",
     price: "200.000đ/buổi",
+    bestFor: "Muốn dùng tiếng Pháp độc lập hơn",
+    focus: "4 kỹ năng, diễn đạt ý kiến, định hướng DELF",
   },
 ];
 
@@ -195,6 +203,87 @@ export const whyFrenchzone = [
   },
 ];
 
+export const heroHighlights = [
+  "Nhóm nhỏ 3–5 học viên",
+  "Tư vấn chọn lớp trước khi học",
+  "Có bài luyện sau buổi học",
+];
+
+export const credibilityStats = [
+  {
+    value: "14+ năm",
+    label: "Gắn bó với tiếng Pháp",
+  },
+  {
+    value: "DELF B2",
+    label: "Chứng chỉ từ năm 2019",
+  },
+  {
+    value: "~100 học viên",
+    label: "Đã từng đồng hành",
+  },
+  {
+    value: "A1 → B1",
+    label: "Lộ trình nền tảng đến độc lập",
+  },
+];
+
+export const levelSelectionGuide = [
+  {
+    level: "A1" as const,
+    title: "Chưa học hoặc mất gốc",
+    body: "Bắt đầu từ phát âm, câu cơ bản, từ vựng quen thuộc và nền tảng ngữ pháp đầu tiên.",
+    href: "/a1",
+  },
+  {
+    level: "A2" as const,
+    title: "Đã có nền tảng nhưng chưa chắc",
+    body: "Củng cố lại A1, học có hệ thống hơn và tăng phản xạ nghe, nói, đọc, viết.",
+    href: "/a2",
+  },
+  {
+    level: "B1" as const,
+    title: "Muốn dùng tiếng Pháp độc lập hơn",
+    body: "Phù hợp nếu bạn muốn diễn đạt ý kiến rõ hơn hoặc định hướng luyện DELF B1.",
+    href: "/b1",
+  },
+];
+
+export const frenchzonePlatform = {
+  title:
+    "Không chỉ là một lớp học — học viên còn có Frenchzone hỗ trợ luyện thêm",
+  body: "Frenchzone là hệ thống học tiếng Pháp mình đang phát triển để hỗ trợ học viên ngoài giờ học. Sau buổi học, học viên có thể có thêm bài luyện, tài liệu, hoạt động ôn tập và định hướng luyện kỹ năng rõ ràng hơn.",
+  bullets: [
+    "Luyện thêm ngoài giờ học",
+    "Theo dõi lộ trình học rõ hơn",
+    "Tài liệu và bài tập được tổ chức theo trình độ",
+    "Định hướng dần từ A1/A2 lên B1 và các kỹ năng DELF/TCF",
+  ],
+  cta: "Khám phá Frenchzone",
+  href: "https://fzone.site",
+  disclaimer:
+    "Frenchzone Academy là site tuyển sinh/lớp học tạm thời. Nền tảng học chính được phát triển riêng tại fzone.site.",
+};
+
+export const studentFeedback = [
+  {
+    title: "Giải thích dễ hiểu",
+    body: "Học viên thường cần một người giúp biến ngữ pháp tiếng Pháp thành các ví dụ gần gũi, dễ nhớ và dễ áp dụng.",
+  },
+  {
+    title: "Sửa phát âm kỹ",
+    body: "Với lớp nhóm nhỏ, học viên có nhiều cơ hội được sửa phát âm, cách đọc và phản xạ nói.",
+  },
+  {
+    title: "Có lộ trình rõ",
+    body: "Thay vì học rời rạc, lớp được tổ chức theo trình độ A1, A2, B1 để học viên biết mình đang ở đâu và cần luyện gì tiếp.",
+  },
+  {
+    title: "Có bài luyện sau buổi học",
+    body: "Học viên không chỉ học trong buổi học mà còn có tài liệu, bài tập và hoạt động luyện thêm để giữ nhịp học.",
+  },
+];
+
 export const howClassesWork = [
   {
     title: "Tư vấn chọn lớp",
@@ -215,10 +304,10 @@ export const howClassesWork = [
 ];
 
 export const teacherIntro =
-  "Mình là Phạm Quang Huy, đã học tiếng Pháp hơn 14 năm, có DELF B2 từ năm 2019 và kinh nghiệm dạy hơn 50 học viên. Hiện mình đang phát triển Frenchzone — một hệ thống hỗ trợ học viên luyện tiếng Pháp ngoài giờ học, giúp việc học có lộ trình, có bài tập và dễ theo dõi tiến độ hơn.";
+  "Mình là Phạm Quang Huy, đã học tiếng Pháp hơn 14 năm, có DELF B2 từ năm 2019 và đã đồng hành cùng khoảng 100 học viên ở nhiều mục tiêu khác nhau: học từ đầu, củng cố nền tảng, học ở trường, luyện giao tiếp và định hướng chứng chỉ.";
 
 export const frenchzoneSupport =
-  "Điểm khác của lớp là học viên không chỉ học trong buổi học. Sau mỗi buổi, học viên sẽ có bài tập, tài liệu và hoạt động luyện thêm qua hệ thống Frenchzone. Mục tiêu là giúp người học biết mình cần luyện gì tiếp theo, thay vì học xong rồi để kiến thức bị rơi rụng.";
+  frenchzonePlatform.body;
 
 export const faqItems = [
   {

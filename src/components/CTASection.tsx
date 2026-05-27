@@ -18,10 +18,10 @@ export function CTASection({
   secondaryLabel,
 }: CTASectionProps) {
   return (
-    <section className="rounded-[2rem] border border-red-100 bg-red-50/80 p-6 sm:p-8">
+    <section className="overflow-hidden rounded-[2rem] border border-red-100 bg-gradient-to-br from-red-50 via-white to-blue-50 p-6 shadow-sm shadow-stone-950/5 sm:p-8">
       <div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
         <div>
-          <h2 className="text-2xl font-bold tracking-tight text-primary-dark">
+          <h2 className="text-2xl font-bold tracking-tight text-primary-dark sm:text-3xl">
             {title}
           </h2>
           <p className="mt-3 max-w-2xl leading-7 text-muted">{body}</p>

@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Frenchzone Academy
+
+Standalone temporary recruitment site for Frenchzone Academy classes.
+
+This is not connected to the existing Frenchzone production app, VM, database,
+auth system, dashboard, or payment flow.
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies and run the local server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Required environment variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Copy `.env.example` to `.env.local` for local testing.
 
-## Learn More
+```bash
+TELEGRAM_BOT_TOKEN=
+TELEGRAM_CHAT_ID=
+LEAD_WEBHOOK_URL=
+NEXT_PUBLIC_ZALO_URL=
+NEXT_PUBLIC_SITE_URL=
+```
 
-To learn more about Next.js, take a look at the following resources:
+Lead delivery priority:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Telegram, if `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` are set.
+2. Generic webhook, if `LEAD_WEBHOOK_URL` is set.
+3. Otherwise `/api/leads` returns `Lead delivery is not configured.`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The app never stores leads on Vercel's filesystem.
+
+## Build
+
+```bash
+npm run build
+```
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+If Vercel CLI is installed and logged in:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+vercel
+vercel --prod
+```
+
+If Vercel CLI is not installed:
+
+```bash
+npm i -g vercel
+vercel login
+vercel --prod
+```
+
+After creating the Vercel project, add these Project Settings environment
+variables and redeploy production:
+
+```bash
+TELEGRAM_BOT_TOKEN
+TELEGRAM_CHAT_ID
+# or LEAD_WEBHOOK_URL
+NEXT_PUBLIC_ZALO_URL
+NEXT_PUBLIC_SITE_URL
+```
+
+## Copy and pricing edits
+
+Most class copy, pricing, FAQ, and teacher/support text live in
+`src/lib/content.ts`. Form behavior lives in `src/components/RegistrationForm.tsx`
+and server delivery lives in `src/app/api/leads/route.ts`.

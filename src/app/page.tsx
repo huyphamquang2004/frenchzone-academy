@@ -1,65 +1,180 @@
-import Image from "next/image";
+import type { Metadata } from "next";
+import { CheckCircle2 } from "lucide-react";
+import { ButtonLink } from "@/components/ButtonLink";
+import { CTASection } from "@/components/CTASection";
+import { ClassCard } from "@/components/ClassCard";
+import { FAQ } from "@/components/FAQ";
+import { FrenchzoneSupport } from "@/components/FrenchzoneSupport";
+import { RegistrationForm } from "@/components/RegistrationForm";
+import { TeacherIntro } from "@/components/TeacherIntro";
+import {
+  classCards,
+  howClassesWork,
+  sharedClassInfo,
+  siteConfig,
+  whyFrenchzone,
+} from "@/lib/content";
+
+export const metadata: Metadata = {
+  title: siteConfig.title,
+  description: siteConfig.description,
+  openGraph: {
+    title: siteConfig.title,
+    description: siteConfig.description,
+  },
+};
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main>
+      <section className="border-b border-line bg-white">
+        <div className="container-page grid gap-10 py-14 md:grid-cols-[1.05fr_0.95fr] md:items-center md:py-20">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-primary">
+              Frenchzone Academy
+            </p>
+            <h1 className="mt-4 text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
+              Lớp tiếng Pháp A1, A2, B1 cùng Frenchzone Academy
+            </h1>
+            <p className="mt-5 max-w-2xl text-lg leading-8 text-muted">
+              Học theo nhóm nhỏ, có lộ trình rõ ràng, có bài tập sau buổi học
+              và hệ thống Frenchzone hỗ trợ luyện thêm.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <ButtonLink href="#registration" icon="message">
+                Đăng ký tư vấn miễn phí
+              </ButtonLink>
+              <ButtonLink href="/a1" variant="secondary">
+                Xem lớp A1
+              </ButtonLink>
+              <ButtonLink href="/a2" variant="secondary">
+                Xem lớp A2
+              </ButtonLink>
+              <ButtonLink href="/b1" variant="secondary">
+                Xem lớp B1
+              </ButtonLink>
+            </div>
+          </div>
+
+          <div className="rounded-[2rem] border border-line bg-background p-5 shadow-sm shadow-stone-950/5">
+            <div className="rounded-[1.5rem] bg-white p-5">
+              <p className="text-sm font-semibold text-muted">
+                Tuyển sinh nhóm nhỏ
+              </p>
+              <div className="mt-5 grid grid-cols-3 gap-3">
+                {classCards.map((item) => (
+                  <div
+                    key={item.level}
+                    className="rounded-2xl border border-line bg-stone-50 p-4 text-center"
+                  >
+                    <p className="text-2xl font-black text-primary">
+                      {item.level}
+                    </p>
+                    <p className="mt-2 text-xs font-semibold text-muted">
+                      {item.price}
+                    </p>
+                  </div>
+                ))}
+              </div>
+              <ul className="mt-6 grid gap-3">
+                {sharedClassInfo.slice(0, 4).map((item) => (
+                  <li key={item} className="flex gap-3 text-sm text-muted">
+                    <CheckCircle2
+                      aria-hidden="true"
+                      className="h-5 w-5 shrink-0 text-primary"
+                    />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      </section>
+
+      <div className="container-page space-y-16 py-14 md:py-20">
+        <section className="space-y-6">
+          <SectionHeading
+            eyebrow="Chọn lớp phù hợp"
+            title="A1, A2 và B1"
+            body="Mỗi lớp có mục tiêu riêng, học phí rõ ràng và đều có tư vấn trước khi học."
+          />
+          <div className="grid gap-5 md:grid-cols-3">
+            {classCards.map((item) => (
+              <ClassCard key={item.level} item={item} />
+            ))}
+          </div>
+        </section>
+
+        <CTASection />
+
+        <section className="space-y-6">
+          <SectionHeading
+            eyebrow="Vì sao học ở đây"
+            title="Cá nhân, nghiêm túc, học theo lộ trình rõ"
+            body="Lớp được xây quanh việc học thật: hiểu trình độ hiện tại, học vừa sức, làm bài đều và có người theo sát."
+          />
+          <div className="grid gap-4 md:grid-cols-3">
+            {whyFrenchzone.map((item) => (
+              <article
+                key={item.title}
+                className="rounded-2xl border border-line bg-white p-6"
+              >
+                <h3 className="text-lg font-bold">{item.title}</h3>
+                <p className="mt-3 leading-7 text-muted">{item.body}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="space-y-6">
+          <SectionHeading
+            eyebrow="Cách lớp học diễn ra"
+            title="Từ tư vấn đầu vào đến luyện thêm sau buổi học"
+          />
+          <div className="grid gap-4 md:grid-cols-4">
+            {howClassesWork.map((step, index) => (
+              <article
+                key={step.title}
+                className="rounded-2xl border border-line bg-white p-5"
+              >
+                <span className="text-sm font-bold text-primary">
+                  0{index + 1}
+                </span>
+                <h3 className="mt-3 font-bold">{step.title}</h3>
+                <p className="mt-2 text-sm leading-6 text-muted">
+                  {step.body}
+                </p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <FrenchzoneSupport />
+        <TeacherIntro />
+        <RegistrationForm sourcePage="/" />
+        <FAQ />
+      </div>
+    </main>
+  );
+}
+
+function SectionHeading({
+  eyebrow,
+  title,
+  body,
+}: {
+  eyebrow: string;
+  title: string;
+  body?: string;
+}) {
+  return (
+    <div>
+      <p className="text-sm font-semibold uppercase tracking-[0.16em] text-primary">
+        {eyebrow}
+      </p>
+      <h2 className="mt-2 text-3xl font-bold tracking-tight">{title}</h2>
+      {body ? <p className="mt-3 max-w-2xl leading-7 text-muted">{body}</p> : null}
     </div>
   );
 }

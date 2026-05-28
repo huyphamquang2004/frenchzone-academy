@@ -211,16 +211,16 @@ export const heroHighlights = [
 
 export const credibilityStats = [
   {
+    value: "~100 học viên",
+    label: "Đã từng đồng hành",
+  },
+  {
     value: "14+ năm",
     label: "Gắn bó với tiếng Pháp",
   },
   {
     value: "DELF B2",
-    label: "Chứng chỉ từ năm 2019",
-  },
-  {
-    value: "~100 học viên",
-    label: "Đã từng đồng hành",
+    label: "Từ năm 2019",
   },
   {
     value: "A1 → B1",
@@ -250,38 +250,27 @@ export const levelSelectionGuide = [
 ];
 
 export const frenchzonePlatform = {
-  title:
-    "Không chỉ là một lớp học — học viên còn có Frenchzone hỗ trợ luyện thêm",
-  body: "Frenchzone là hệ thống học tiếng Pháp mình đang phát triển để hỗ trợ học viên ngoài giờ học. Sau buổi học, học viên có thể có thêm bài luyện, tài liệu, hoạt động ôn tập và định hướng luyện kỹ năng rõ ràng hơn.",
+  title: "Học trên lớp, luyện thêm với Frenchzone",
+  body: "Frenchzone là hệ thống học tiếng Pháp mình đang phát triển để hỗ trợ học viên ngoài giờ học. Mục tiêu là giúp học viên có thêm bài luyện, tài liệu và định hướng ôn tập rõ ràng sau mỗi buổi.",
   bullets: [
     "Luyện thêm ngoài giờ học",
     "Theo dõi lộ trình học rõ hơn",
     "Tài liệu và bài tập được tổ chức theo trình độ",
     "Định hướng dần từ A1/A2 lên B1 và các kỹ năng DELF/TCF",
   ],
-  cta: "Khám phá Frenchzone",
+  cta: "Khám phá fzone.site",
   href: "https://fzone.site",
   disclaimer:
-    "Frenchzone Academy là site tuyển sinh/lớp học tạm thời. Nền tảng học chính được phát triển riêng tại fzone.site.",
+    "Frenchzone Academy là site tuyển sinh lớp học. Nền tảng học chính được phát triển tại fzone.site.",
 };
 
 export const studentFeedback = [
-  {
-    title: "Giải thích dễ hiểu",
-    body: "Học viên thường cần một người giúp biến ngữ pháp tiếng Pháp thành các ví dụ gần gũi, dễ nhớ và dễ áp dụng.",
-  },
-  {
-    title: "Sửa phát âm kỹ",
-    body: "Với lớp nhóm nhỏ, học viên có nhiều cơ hội được sửa phát âm, cách đọc và phản xạ nói.",
-  },
-  {
-    title: "Có lộ trình rõ",
-    body: "Thay vì học rời rạc, lớp được tổ chức theo trình độ A1, A2, B1 để học viên biết mình đang ở đâu và cần luyện gì tiếp.",
-  },
-  {
-    title: "Có bài luyện sau buổi học",
-    body: "Học viên không chỉ học trong buổi học mà còn có tài liệu, bài tập và hoạt động luyện thêm để giữ nhịp học.",
-  },
+  "“Anh giảng dễ hiểu, em thấy tiếng Pháp bớt sợ hơn nhiều.”",
+  "“Em tự tin hơn khi nói và làm bài tiếng Pháp.”",
+  "“Cảm ơn anh đã giúp bọn em đạt aim ạ.”",
+  "“Lớp ít người nên em được sửa lỗi kỹ hơn.”",
+  "“Sau mỗi buổi em biết mình cần ôn gì tiếp.”",
+  "“Ngữ pháp được giải thích rõ, dễ nhớ hơn so với tự học.”",
 ];
 
 export const howClassesWork = [

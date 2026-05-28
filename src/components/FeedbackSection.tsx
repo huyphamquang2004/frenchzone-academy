@@ -1,37 +1,28 @@
-import { MessageSquareText } from "lucide-react";
 import { SectionHeading } from "@/components/SectionHeading";
 import { studentFeedback } from "@/lib/content";
 
 export function FeedbackSection() {
   return (
-    <section className="space-y-6">
+    <section className="rounded-[2rem] border border-line bg-gradient-to-br from-white via-red-50/45 to-blue-50/60 p-6 shadow-sm shadow-stone-950/5 md:p-8">
       <SectionHeading
         eyebrow="Feedback"
-        title="Học viên thường đánh giá cao điều gì?"
-        body="Dưới đây là các nhóm giá trị học viên thường cần khi học tiếng Pháp theo lớp nhỏ. Phần nhận xét chi tiết sẽ được cập nhật bằng feedback thật sau."
+        title="Học viên nói gì sau khi học?"
+        body="Một vài lời nhắn và cảm nhận mình thường nhận được trong quá trình đồng hành cùng học viên."
+        align="center"
       />
 
-      <div className="grid gap-4 md:grid-cols-2">
-        {studentFeedback.map((item) => (
+      <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        {studentFeedback.map((quote) => (
           <article
-            key={item.title}
-            className="rounded-[1.5rem] border border-line bg-white p-6 shadow-sm shadow-stone-950/5"
+            key={quote}
+            className="flex min-h-36 items-center rounded-[1.5rem] border border-white/80 bg-white/90 p-6 shadow-sm shadow-stone-950/5 ring-1 ring-stone-950/[0.03]"
           >
-            <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-red-50 text-primary">
-              <MessageSquareText aria-hidden="true" className="h-5 w-5" />
-            </div>
-            <h3 className="mt-5 text-xl font-bold tracking-tight">
-              {item.title}
-            </h3>
-            <p className="mt-3 leading-7 text-muted">{item.body}</p>
+            <p className="text-base font-semibold leading-7 text-foreground">
+              {quote}
+            </p>
           </article>
         ))}
       </div>
-
-      <p className="rounded-2xl border border-blue-100 bg-blue-50 p-4 text-sm font-medium leading-6 text-accent">
-        Phần feedback chi tiết từ học viên sẽ được cập nhật thêm sau khi tổng
-        hợp lại các nhận xét thật.
-      </p>
     </section>
   );
 }

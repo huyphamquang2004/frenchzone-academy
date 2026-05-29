@@ -25,6 +25,20 @@ export function ClassFinderQuiz() {
       return null;
     }
 
+    const buildResult = (state: QuizResultState): QuizResult => {
+      const rawResult = classFinderQuiz.results[state];
+      const level =
+        state === "UNCERTAIN" ? undefined : (rawResult.level as QuizLevel);
+
+      return {
+        state,
+        level,
+        title: rawResult.title,
+        body: rawResult.body,
+        cta: rawResult.cta,
+      };
+    };
+
     const tally: Record<QuizLevel, number> = {
       A1: 0,
       A2: 0,
@@ -39,7 +53,11 @@ export function ClassFinderQuiz() {
         return;
       }
 
-      const mappedLevel = classFinderQuiz.optionToLevel[value];
+      const mappedLevel =
+        classFinderQuiz.optionToLevel[value as keyof typeof classFinderQuiz.optionToLevel] as
+          | QuizResultState
+          | undefined;
+
       if (mappedLevel === "UNCERTAIN") {
         selectedStates.add("UNCERTAIN");
         return;
@@ -52,7 +70,7 @@ export function ClassFinderQuiz() {
     });
 
     if (selectedStates.has("UNCERTAIN")) {
-      return classFinderQuiz.results.UNCERTAIN;
+      return buildResult("UNCERTAIN");
     }
 
     const sorted = Object.entries(tally)
@@ -63,11 +81,11 @@ export function ClassFinderQuiz() {
     const runnerUp = sorted[1];
 
     if (!top || top.value === 0) {
-      return classFinderQuiz.results.UNCERTAIN;
+      return buildResult("UNCERTAIN");
     }
 
     if (top.value === runnerUp.value) {
-      return classFinderQuiz.results.UNCERTAIN;
+      return buildResult("UNCERTAIN");
     }
 
     const levelResult = classFinderQuiz.results[top.key];

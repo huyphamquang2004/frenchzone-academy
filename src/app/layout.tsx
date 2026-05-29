@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Be_Vietnam_Pro, Geist_Mono } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { MobileStickyCTA } from "@/components/MobileStickyCTA";
 import { siteConfig } from "@/lib/content";
 import "./globals.css";
 
@@ -44,9 +45,10 @@ export default function RootLayout({
       lang="vi"
       className={`${sans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col">
+      <body className="flex min-h-full flex-col pb-16 md:pb-0">
         <Header />
         <div className="flex-1">{children}</div>
+        <MobileStickyCTA />
         <Footer />
       </body>
     </html>

@@ -10,6 +10,21 @@ export type ClassCardContent = {
   focus: string;
 };
 
+export type QuizLevel = "A1" | "A2" | "B1";
+export type QuizResultState = QuizLevel | "UNCERTAIN";
+
+type QuizQuestion = {
+  id: string;
+  title: string;
+  options: string[];
+};
+
+type QuizResultContent = {
+  title: string;
+  body: string;
+  cta: string;
+};
+
 export type ClassPageContent = ClassCardContent & {
   metadata: {
     title: string;
@@ -246,6 +261,115 @@ export const levelSelectionGuide = [
     title: "Muốn dùng tiếng Pháp độc lập hơn",
     body: "Phù hợp nếu bạn muốn diễn đạt ý kiến rõ hơn hoặc định hướng luyện DELF B1.",
     href: "/b1",
+  },
+];
+
+export const classFinderQuiz = {
+  title: "Bạn nên bắt đầu từ lớp nào?",
+  subtitle:
+    "Trả lời nhanh vài câu để mình gợi ý bạn nên bắt đầu với A1, A2 hay B1.",
+  questions: [
+    {
+      id: "q1",
+      title: "Bạn đã từng học tiếng Pháp chưa?",
+      options: [
+        "Chưa học bao giờ",
+        "Từng học nhưng mất gốc",
+        "Đã học A1",
+        "Đã học A2 hoặc gần A2",
+        "Không chắc",
+      ],
+    },
+    {
+      id: "q2",
+      title: "Hiện tại bạn thấy khó nhất ở phần nào?",
+      options: [
+        "Phát âm",
+        "Ngữ pháp nền tảng",
+        "Nghe hiểu",
+        "Nói phản xạ",
+        "Viết câu/đoạn",
+        "Không biết mình yếu phần nào",
+      ],
+    },
+    {
+      id: "q3",
+      title: "Mục tiêu chính của bạn là gì?",
+      options: [
+        "Học từ đầu cho chắc",
+        "Giao tiếp cơ bản",
+        "Học ở trường/đại học",
+        "Chuẩn bị DELF/TCF",
+        "Du học/công việc",
+        "Lấy lại gốc",
+      ],
+    },
+  ],
+  optionToLevel: {
+    "Chưa học bao giờ": "A1",
+    "Từng học nhưng mất gốc": "A1",
+    "Đã học A1": "A2",
+    "Đã học A2 hoặc gần A2": "B1",
+    "Không chắc": "UNCERTAIN",
+    "Phát âm": "A1",
+    "Ngữ pháp nền tảng": "A1",
+    "Nghe hiểu": "A2",
+    "Nói phản xạ": "B1",
+    "Viết câu/đoạn": "B1",
+    "Không biết mình yếu phần nào": "UNCERTAIN",
+    "Học từ đầu cho chắc": "A1",
+    "Giao tiếp cơ bản": "A2",
+    "Học ở trường/đại học": "A2",
+    "Chuẩn bị DELF/TCF": "B1",
+    "Du học/công việc": "B1",
+    "Lấy lại gốc": "A1",
+  },
+  results: {
+    A1: {
+      title: "Bạn có thể bắt đầu với A1",
+      body: "Phù hợp nếu bạn mới học, mất gốc hoặc muốn xây lại nền tảng phát âm, giao tiếp cơ bản và ngữ pháp từ đầu.",
+      cta: "Đăng ký tư vấn lớp A1",
+      level: "A1",
+    } as QuizResultContent & { level: QuizLevel },
+    A2: {
+      title: "Bạn có thể phù hợp với A2",
+      body: "Phù hợp nếu bạn đã có nền tảng A1 nhưng muốn giao tiếp chắc hơn, củng cố ngữ pháp, nghe đọc và phản xạ nói.",
+      cta: "Đăng ký tư vấn lớp A2",
+      level: "A2",
+    } as QuizResultContent & { level: QuizLevel },
+    B1: {
+      title: "Bạn có thể phù hợp với B1",
+      body: "Phù hợp nếu bạn đã ở khoảng A2/A2+ và muốn dùng tiếng Pháp độc lập hơn hoặc định hướng DELF B1.",
+      cta: "Đăng ký tư vấn lớp B1",
+      level: "B1",
+    } as QuizResultContent & { level: QuizLevel },
+    UNCERTAIN: {
+      title: "Mình cần hỏi thêm một chút",
+      body: "Nếu bạn chưa chắc trình độ hiện tại, hãy đăng ký tư vấn. Mình sẽ hỏi nhanh mục tiêu học và gợi ý nên bắt đầu từ A1, A2 hay B1.",
+      cta: "Đăng ký tư vấn miễn phí",
+      level: "UNCERTAIN",
+    } as QuizResultContent & { level: QuizResultState },
+  } as Record<
+    QuizResultState,
+    QuizResultContent & { level: QuizResultState }
+  >,
+};
+
+export const learningPathway = [
+  {
+    level: "A1",
+    title: "Xây nền",
+    body: "Phát âm, chào hỏi, giới thiệu bản thân, ngữ pháp và từ vựng cơ bản.",
+  },
+  {
+    level: "A2",
+    title: "Học chắc",
+    body: "Giao tiếp tình huống quen thuộc, củng cố ngữ pháp, mở rộng nghe đọc.",
+  },
+  {
+    level: "B1",
+    title: "Dùng độc lập hơn",
+    body: "Trình bày ý kiến, luyện 4 kỹ năng, có thể định hướng DELF B1.",
   },
 ];
 

@@ -3,10 +3,12 @@ import { CheckCircle2 } from "lucide-react";
 import { ButtonLink } from "@/components/ButtonLink";
 import { CTASection } from "@/components/CTASection";
 import { ClassCard } from "@/components/ClassCard";
+import { ClassFinderQuiz } from "@/components/ClassFinderQuiz";
 import { CredibilityStats } from "@/components/CredibilityStats";
 import { FAQ } from "@/components/FAQ";
 import { FeedbackSection } from "@/components/FeedbackSection";
 import { FrenchzoneSupport } from "@/components/FrenchzoneSupport";
+import { LearningPathway } from "@/components/LearningPathway";
 import { LevelGuide } from "@/components/LevelGuide";
 import { RegistrationForm } from "@/components/RegistrationForm";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -30,6 +32,8 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+  const queryLevel = "";
+
   return (
     <main>
       <section className="border-b border-line bg-gradient-to-br from-white via-red-50/60 to-blue-50/70">
@@ -107,6 +111,10 @@ export default function Home() {
 
       <div className="container-page space-y-16 py-14 md:py-20">
         <CredibilityStats />
+
+        <ClassFinderQuiz />
+
+        <LearningPathway />
 
         <div id="level-guide">
           <LevelGuide />
@@ -186,7 +194,11 @@ export default function Home() {
         </section>
 
         <TeacherIntro />
-        <RegistrationForm sourcePage="/" />
+        <RegistrationForm
+          key={queryLevel || "home-default"}
+          sourcePage="/"
+          defaultTargetLevel={"Chưa chắc"}
+        />
         <FAQ />
       </div>
     </main>

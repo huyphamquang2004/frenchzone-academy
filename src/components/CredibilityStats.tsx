@@ -8,15 +8,14 @@ export function CredibilityStats() {
     <section className="space-y-6">
       <div className="max-w-3xl">
         <p className="text-sm font-semibold uppercase tracking-[0.16em] text-primary">
-          Nền tảng tin cậy
+          Vì sao có thể yên tâm?
         </p>
         <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
-          Lớp A1 được xây cho người cần học lại có hệ thống
+          Lớp nhỏ, rõ việc, học từng bước
         </h2>
         <p className="mt-3 leading-7 text-muted">
-          Đức và Huy có nền tảng học và giảng dạy tiếng Pháp lâu dài. Lớp học
-          ưu tiên sự dễ hiểu, thực tế và phù hợp với học viên mới bắt đầu hoặc
-          bị mất gốc.
+          Bọn mình giữ lớp gọn để có thời gian nghe, sửa và nhắc lại cho từng
+          bạn. Cách học ưu tiên dễ hiểu, thực tế và vừa sức.
         </p>
       </div>
 

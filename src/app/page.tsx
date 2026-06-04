@@ -64,13 +64,12 @@ export default function Home() {
               Frenchzone Academy
             </p>
             <h1 className="mt-4 max-w-full break-words text-3xl font-black leading-tight tracking-tight text-primary-dark sm:text-5xl lg:text-6xl">
-              Lớp tiếng Pháp A1 cho người mới bắt đầu / mất gốc
+              Học tiếng Pháp A1 từ đầu, chậm mà chắc
             </h1>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-muted">
-              Lớp nhóm nhỏ do Đức và Huy phụ trách, dành cho học viên muốn bắt
-              đầu tiếng Pháp từ nền tảng. Học chậm mà chắc: phát âm, từ vựng,
-              ngữ pháp cơ bản, phản xạ giao tiếp và bài tập ôn lại sau từng
-              buổi.
+              Dành cho bạn mới học, mất gốc hoặc từng học nhưng chưa có hệ
+              thống. Lớp nhóm nhỏ 4–5 học viên, học từ phát âm, câu cơ bản đến
+              phản xạ giao tiếp đơn giản.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <ButtonLink href="#registration" icon="message">
@@ -116,7 +115,7 @@ export default function Home() {
           <SectionHeading
             eyebrow="Đúng điểm bắt đầu"
             title="Lớp này dành cho ai?"
-            body="A1 phù hợp nhất khi học viên cần một nền tảng rõ ràng, được sửa lỗi trực tiếp và có người theo sát từ những bước đầu."
+            body="Nếu bạn muốn học lại từ gốc và cần người sửa lỗi trực tiếp, đây là điểm bắt đầu phù hợp."
           />
           <div className="grid gap-3 md:grid-cols-2">
             {a1SuitableLearners.map((item) => (
@@ -136,9 +135,9 @@ export default function Home() {
 
         <section className="space-y-6">
           <SectionHeading
-            eyebrow="Nền tảng A1"
-            title="Bạn sẽ học gì ở A1?"
-            body="Nội dung được chia nhỏ để học viên hiểu bài thật sự, luyện lại được sau giờ học và có nền để tiếp tục lên A2/B1 hoặc ôn DELF/TCF sau này."
+            eyebrow="Trong lớp"
+            title="Bạn sẽ học gì?"
+            body="Nội dung được chia nhỏ để học viên hiểu bài, luyện lại được và không bị quá tải."
           />
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {a1LearningFocus.map((item, index) => (
@@ -165,15 +164,15 @@ export default function Home() {
         <section className="grid gap-6 rounded-[2rem] border border-red-100 bg-gradient-to-br from-red-50 via-white to-blue-50 p-6 shadow-sm shadow-stone-950/5 md:grid-cols-[0.9fr_1.1fr] md:p-8">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.16em] text-primary">
-              Vì sao lớp nhỏ quan trọng?
+              Lớp nhóm nhỏ
             </p>
             <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
-              Người mới cần được nghe, sửa và nhắc lại đúng lúc
+              Vì sao lớp chỉ 4–5 người?
             </h2>
             <p className="mt-4 leading-8 text-muted">
-              Với người mới bắt đầu, một lỗi phát âm hoặc cách đặt câu sai có
-              thể thành thói quen rất nhanh. Sĩ số nhỏ giúp học viên không học
-              vẹt, không học lan man và giữ được động lực sau vài buổi đầu.
+              Ở A1, phát âm và cách đặt câu rất dễ sai nếu không được sửa sớm.
+              Lớp nhỏ giúp từng bạn có nhiều lượt nói hơn và không bị trôi sau
+              vài buổi đầu.
             </p>
           </div>
           <div className="grid gap-4">
@@ -196,7 +195,7 @@ export default function Home() {
           <SectionHeading
             eyebrow="Lịch đang mở"
             title="Các lớp A1 hiện đang mở"
-            body="Bạn có thể chọn lịch phù hợp hoặc ghi lịch rảnh khác trong form để Đức/Huy tư vấn thêm."
+            body="Bạn có thể chọn khung giờ gần với lịch của mình, hoặc ghi lịch rảnh khác trong form."
           />
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {a1ClassSchedule.map((item) => (
@@ -241,8 +240,7 @@ export default function Home() {
           </div>
           <div className="grid gap-4 rounded-[1.5rem] border border-blue-100 bg-blue-50 p-5 md:grid-cols-[1fr_auto] md:items-center">
             <p className="leading-7 text-accent">
-              Mỗi lớp chỉ khoảng 4–5 học viên nên số lượng sẽ được giới hạn để
-              giáo viên có thể theo sát từng bạn.
+              Số chỗ mỗi lớp được giữ nhỏ để buổi học có đủ thời gian sửa bài.
             </p>
             <ButtonLink href="#registration" icon="message">
               Đăng ký tư vấn lịch học
@@ -253,8 +251,8 @@ export default function Home() {
         <FeedbackSection />
 
         <CTASection
-          title="Muốn bắt đầu A1 nhưng chưa chắc lịch hoặc nền tảng hiện tại?"
-          body="Để lại thông tin ngắn gọn. Đức hoặc Huy sẽ tư vấn lộ trình, lịch học phù hợp và kiểm tra trình độ đầu vào nếu cần."
+          title="Chưa chắc mình nên bắt đầu thế nào?"
+          body="Để lại thông tin ngắn gọn, bọn mình sẽ nhắn lại để tư vấn lịch học và kiểm tra đầu vào nếu cần."
           primaryHref="#registration"
           primaryLabel="Đăng ký tư vấn lớp A1"
           secondaryHref="#class-schedule"
@@ -275,7 +273,8 @@ export default function Home() {
                 Lộ trình tiếp theo
               </h2>
               <p className="mt-1 text-sm leading-6 text-muted">
-                A1 là nền để học tiếp A2, B1 hoặc định hướng DELF/TCF sau này.
+                Khi học chắc hơn, bạn có thể đi tiếp A2, B1 hoặc định hướng
+                DELF/TCF.
               </p>
             </div>
           </div>
@@ -293,7 +292,7 @@ export default function Home() {
             <div>
               <h3 className="font-bold">Nhóm nhỏ</h3>
               <p className="mt-2 text-sm leading-6 text-muted">
-                Dễ hỏi bài, dễ được sửa lỗi và có người theo sát tiến độ.
+                Dễ hỏi bài và có thêm lượt luyện nói.
               </p>
             </div>
           </div>
@@ -305,7 +304,7 @@ export default function Home() {
             <div>
               <h3 className="font-bold">Tài liệu rõ ràng</h3>
               <p className="mt-2 text-sm leading-6 text-muted">
-                Có slides, bài tập và phần tổng hợp để học viên ôn lại.
+                Có slides và phần tổng hợp để ôn lại.
               </p>
             </div>
           </div>
@@ -317,7 +316,7 @@ export default function Home() {
             <div>
               <h3 className="font-bold">Học chắc từ đầu</h3>
               <p className="mt-2 text-sm leading-6 text-muted">
-                Tập trung hiểu bài, dùng được kiến thức và giữ nhịp học.
+                Hiểu bài, dùng được câu đã học và giữ nhịp.
               </p>
             </div>
           </div>

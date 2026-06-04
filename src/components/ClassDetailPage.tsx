@@ -110,12 +110,12 @@ export function ClassDetailPage({ content }: ClassDetailPageProps) {
         <CTASection
           title={
             isA1
-              ? "Muốn học A1 nhưng chưa chắc lịch nào phù hợp?"
+              ? "Chưa chắc lịch nào phù hợp?"
               : `Cần tư vấn lớp ${content.level}?`
           }
           body={
             isA1
-              ? "Đức hoặc Huy sẽ tư vấn lộ trình, lịch học và kiểm tra trình độ đầu vào nếu cần."
+              ? "Để lại thông tin, bọn mình sẽ nhắn lại để tư vấn lịch học và kiểm tra đầu vào nếu cần."
               : "Gửi thông tin ngắn gọn để được tư vấn lớp phù hợp với nền tảng và mục tiêu hiện tại."
           }
           primaryHref="#registration"
@@ -173,7 +173,7 @@ function A1SchedulePreview() {
       <SectionHeading
         eyebrow="Lịch đang mở"
         title="Các khung giờ A1 có thể đăng ký"
-        body="Lịch cụ thể sẽ được chốt theo nhu cầu của lớp. Mỗi lớp chỉ khoảng 4–5 học viên để giáo viên theo sát từng bạn."
+        body="Bạn có thể chọn khung giờ gần với lịch của mình, hoặc ghi lịch rảnh khác trong form."
       />
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         {a1ClassSchedule.map((item) => (

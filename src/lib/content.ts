@@ -59,30 +59,30 @@ export type ContactMethod = {
 
 export const siteConfig = {
   name: "Frenchzone Academy",
-  title: "Frenchzone Academy — Lớp tiếng Pháp A1 cho người mới bắt đầu",
+  title: "Frenchzone Academy — Học tiếng Pháp A1 từ đầu",
   description:
-    "Lớp tiếng Pháp A1 nhóm nhỏ cùng Đức và Huy, 4–5 học viên/lớp, online hoặc offline tại Hà Nội, có bài tập và phần tổng hợp sau từng buổi học.",
+    "Lớp tiếng Pháp A1 nhóm nhỏ 4–5 học viên, học từ phát âm, câu cơ bản đến phản xạ giao tiếp đơn giản.",
 };
 
 export const sharedClassInfo = [
-  "Trình độ: A1 cho người mới bắt đầu / mất gốc",
+  "Trình độ: A1 cho người mới học hoặc mất gốc",
   "Hình thức: online hoặc offline tại Hà Nội",
   "Sĩ số: 4–5 học viên/lớp",
   "Thời lượng: 90 phút/buổi",
-  "Có bài tập và phần tổng hợp sau buổi học",
-  "Có hỗ trợ học thêm qua Frenchzone tại fzone.site",
+  "Có phần ôn lại sau buổi học",
+  "Có hỗ trợ thêm qua fzone.site",
 ];
 
 export const classCards: ClassCardContent[] = [
   {
     level: "A1",
     href: "/a1",
-    title: "A1 — Cho người mới bắt đầu / mất gốc",
+    title: "A1 — Học từ đầu, chậm mà chắc",
     description:
-      "Dành cho học viên muốn học chắc từ đầu: phát âm, từ vựng, ngữ pháp nền tảng, đọc hiểu, viết câu ngắn và phản xạ giao tiếp đơn giản.",
+      "Dành cho bạn mới học, mất gốc hoặc từng học nhưng chưa có hệ thống.",
     price: "Tư vấn theo lớp",
     bestFor: "Chưa học hoặc mất gốc",
-    focus: "Học chắc nền tảng, không học vẹt, không học lan man",
+    focus: "Phát âm, câu cơ bản, giao tiếp đơn giản",
   },
   {
     level: "A2",
@@ -107,57 +107,56 @@ export const classCards: ClassCardContent[] = [
 ];
 
 export const a1SuitableLearners = [
-  "Người chưa biết gì về tiếng Pháp và muốn học từ đầu",
-  "Người từng học nhưng bị mất gốc",
-  "Người đã học rời rạc, chưa có hệ thống rõ ràng",
-  "Học sinh THCS/THPT cần củng cố kiến thức tiếng Pháp ở trường",
-  "Sinh viên hoặc người đi làm muốn bắt đầu một ngoại ngữ mới",
-  "Người muốn xây nền A1–A2 trước khi học lên B1 hoặc ôn DELF/TCF",
+  "Mới bắt đầu từ số 0",
+  "Từng học nhưng mất gốc",
+  "Học ở trường nhưng chưa chắc",
+  "Sinh viên/người đi làm muốn học thêm ngoại ngữ",
+  "Muốn có nền A1–A2 trước khi lên B1 hoặc ôn DELF/TCF",
 ];
 
 export const a1LearningFocus = [
   {
-    title: "Phát âm từ đầu",
-    body: "Làm quen cách đọc tiếng Pháp, âm dễ sai và thói quen đọc đúng ngay từ những buổi đầu.",
+    title: "Phát âm cơ bản",
+    body: "Làm quen cách đọc tiếng Pháp và sửa sớm những âm dễ sai.",
   },
   {
-    title: "Từ vựng gần gũi",
-    body: "Học từ vựng cơ bản theo chủ đề quen thuộc để có thể dùng trong câu và hội thoại ngắn.",
+    title: "Từ và mẫu câu quen thuộc",
+    body: "Học theo chủ đề gần gũi để dùng được trong câu ngắn.",
   },
   {
-    title: "Ngữ pháp nền tảng",
-    body: "Giống, số, mạo từ, động từ cơ bản, cách đặt câu và các cấu trúc A1 cần dùng thường xuyên.",
+    title: "Ngữ pháp vừa đủ dùng",
+    body: "Giống, số, mạo từ, động từ và cách đặt câu cơ bản.",
   },
   {
-    title: "Phản xạ giao tiếp",
-    body: "Tập chào hỏi, giới thiệu bản thân, hỏi đáp đơn giản và trả lời bằng câu rõ ràng.",
+    title: "Nói câu đơn giản",
+    body: "Tập chào hỏi, tự giới thiệu và hỏi đáp ngắn.",
   },
   {
-    title: "Đọc hiểu đoạn ngắn",
-    body: "Luyện đọc các đoạn A1 ngắn, nắm ý chính và nhận diện từ/cấu trúc đã học.",
+    title: "Đọc đoạn ngắn",
+    body: "Nhận ra từ, mẫu câu đã học và nắm ý chính.",
   },
   {
-    title: "Viết câu và đoạn ngắn",
-    body: "Tập viết câu đúng, đoạn ngắn về bản thân, gia đình, lịch học, sở thích và hoạt động hằng ngày.",
+    title: "Viết câu/đoạn ngắn",
+    body: "Viết về bản thân, lịch học, sở thích và hoạt động hằng ngày.",
   },
   {
-    title: "Bài tập sau từng buổi",
-    body: "Có bài tập và phần tổng hợp nội dung để học viên ôn lại thay vì chỉ nghe giảng trên lớp.",
+    title: "Ôn lại sau buổi học",
+    body: "Có bài luyện và phần tổng hợp để không quên bài khi về nhà.",
   },
 ];
 
 export const a1SmallClassReasons = [
   {
-    title: "Sửa lỗi trực tiếp",
-    body: "Người mới học rất dễ sai phát âm, chia động từ và đặt câu. Sĩ số 4–5 học viên giúp giáo viên có thời gian nghe, sửa và nhắc lại cho từng bạn.",
+    title: "Nhiều lượt nói hơn",
+    body: "Mỗi bạn có thêm thời gian đọc, nói và đặt câu trong buổi học.",
   },
   {
-    title: "Học có hệ thống",
-    body: "Lớp đi từ nền tảng A1, giúp học viên hiểu mình đang học gì và dùng được kiến thức đã học, thay vì học vẹt hoặc học lan man.",
+    title: "Được sửa sớm",
+    body: "Phát âm và cách đặt câu sai nếu để lâu sẽ rất khó sửa.",
   },
   {
-    title: "Giữ nhịp học",
-    body: "Nhóm nhỏ giúp giáo viên theo sát tiến độ, giao bài vừa sức và hỗ trợ kịp thời để học viên không mất động lực sau vài buổi đầu.",
+    title: "Không bị trôi",
+    body: "Giáo viên dễ nhận ra bạn đang vướng ở đâu để nhắc lại kịp lúc.",
   },
 ];
 
@@ -174,22 +173,22 @@ export const campaignHighlights: CampaignHighlight[] = [
   {
     value: "4–5",
     label: "học viên/lớp",
-    body: "Nhóm nhỏ để giáo viên theo sát từng bạn.",
+    body: "Đủ nhỏ để từng bạn có lượt nói và được sửa.",
   },
   {
     value: "90",
     label: "phút/buổi",
-    body: "Đủ thời lượng để học lý thuyết, luyện nói và sửa lỗi.",
+    body: "Có thời gian học bài mới, luyện nói và hỏi lại.",
   },
   {
     value: "HN",
     label: "online/offline",
-    body: "Học online hoặc offline tại Hà Nội tùy nhu cầu của lớp.",
+    body: "Linh hoạt theo lịch và nhu cầu của lớp.",
   },
   {
     value: "A1",
-    label: "học chắc từ đầu",
-    body: "Có bài tập và phần tổng hợp sau từng buổi học.",
+    label: "học từ đầu",
+    body: "Có phần ôn lại để giữ nhịp sau mỗi buổi.",
   },
 ];
 
@@ -204,31 +203,31 @@ export const credibilityStats = [
   },
   {
     value: "100+ học viên",
-    label: "đã từng đồng hành",
+    label: "đã từng hỗ trợ",
   },
   {
     value: "4–5 học viên/lớp",
-    label: "nhóm nhỏ dễ theo sát",
+    label: "nhóm nhỏ dễ sửa bài",
   },
 ];
 
 export const levelSelectionGuide = [
   {
     level: "A1" as const,
-    title: "Bắt đầu hoặc học lại từ gốc",
-    body: "Lớp trọng tâm hiện tại dành cho người mới bắt đầu, mất gốc hoặc cần học lại tiếng Pháp có hệ thống.",
+    title: "Bắt đầu từ gốc",
+    body: "Phù hợp nếu bạn mới học, mất gốc hoặc muốn học lại cho chắc.",
     href: "/a1",
   },
   {
     level: "A2" as const,
-    title: "Sau khi đã chắc nền A1",
-    body: "Khi đã nắm phát âm, câu cơ bản và thói quen học, học viên có thể tiếp tục lên A2 để mở rộng giao tiếp.",
+    title: "Mở rộng sau A1",
+    body: "Khi đã quen phát âm và câu cơ bản, bạn có thể lên A2 để giao tiếp nhiều hơn.",
     href: "/a2",
   },
   {
     level: "B1" as const,
-    title: "Định hướng DELF/TCF về sau",
-    body: "A1 là nền để học lên B1 hoặc ôn DELF/TCF sau này, nhưng không cần học vội khi nền tảng chưa chắc.",
+    title: "Hướng tới B1/DELF",
+    body: "Đi tiếp khi bạn đã đủ chắc để đọc, nghe và trình bày ý rõ hơn.",
     href: "/b1",
   },
 ];
@@ -236,7 +235,7 @@ export const levelSelectionGuide = [
 export const classFinderQuiz = {
   title: "Bạn nên bắt đầu từ lớp nào?",
   subtitle:
-    "Trả lời nhanh vài câu để mình gợi ý bạn nên bắt đầu với A1, A2 hay B1.",
+    "Trả lời vài câu ngắn, bọn mình sẽ gợi ý mức học phù hợp hơn.",
   questions: [
     {
       id: "q1",
@@ -296,25 +295,25 @@ export const classFinderQuiz = {
   results: {
     A1: {
       title: "Bạn có thể bắt đầu với A1",
-      body: "Phù hợp nếu bạn mới học, mất gốc hoặc muốn xây lại nền tảng phát âm, giao tiếp cơ bản và ngữ pháp từ đầu.",
+      body: "Phù hợp nếu bạn mới học, mất gốc hoặc muốn học lại phát âm, câu cơ bản và giao tiếp đơn giản.",
       cta: "Đăng ký tư vấn lớp A1",
       level: "A1",
     } as QuizResultContent & { level: QuizLevel },
     A2: {
       title: "Bạn có thể phù hợp với A2",
-      body: "Phù hợp nếu bạn đã có nền tảng A1 nhưng muốn giao tiếp chắc hơn, củng cố ngữ pháp, nghe đọc và phản xạ nói.",
+      body: "Phù hợp nếu bạn đã học A1 nhưng muốn giao tiếp chắc hơn và ôn lại ngữ pháp.",
       cta: "Đăng ký tư vấn lớp A2",
       level: "A2",
     } as QuizResultContent & { level: QuizLevel },
     B1: {
       title: "Bạn có thể phù hợp với B1",
-      body: "Phù hợp nếu bạn đã ở khoảng A2/A2+ và muốn dùng tiếng Pháp độc lập hơn hoặc định hướng DELF B1.",
+      body: "Phù hợp nếu bạn đang ở khoảng A2/A2+ và muốn dùng tiếng Pháp độc lập hơn.",
       cta: "Đăng ký tư vấn lớp B1",
       level: "B1",
     } as QuizResultContent & { level: QuizLevel },
     UNCERTAIN: {
       title: "Mình cần hỏi thêm một chút",
-      body: "Nếu bạn chưa chắc trình độ hiện tại, hãy đăng ký tư vấn. Mình sẽ hỏi nhanh mục tiêu học và gợi ý nên bắt đầu từ A1, A2 hay B1.",
+      body: "Nếu bạn chưa chắc trình độ, cứ để lại thông tin. Bọn mình sẽ hỏi nhanh rồi gợi ý sau.",
       cta: "Đăng ký tư vấn miễn phí",
       level: "UNCERTAIN",
     } as QuizResultContent & { level: QuizResultState },
@@ -328,64 +327,65 @@ export const learningPathway = [
   {
     level: "A1",
     title: "Xây nền",
-    body: "Phát âm, chào hỏi, giới thiệu bản thân, ngữ pháp và từ vựng cơ bản.",
+    body: "Phát âm, chào hỏi, câu ngắn và từ vựng quen thuộc.",
   },
   {
     level: "A2",
     title: "Học chắc",
-    body: "Giao tiếp tình huống quen thuộc, củng cố ngữ pháp, mở rộng nghe đọc.",
+    body: "Giao tiếp quen thuộc, ôn ngữ pháp và mở rộng nghe đọc.",
   },
   {
     level: "B1",
-    title: "Dùng độc lập hơn",
-    body: "Trình bày ý kiến, luyện 4 kỹ năng, có thể định hướng DELF B1.",
+    title: "Dùng tự tin hơn",
+    body: "Trình bày ý kiến, luyện 4 kỹ năng và định hướng DELF nếu cần.",
   },
 ];
 
 export const whyFrenchzone = [
   {
-    title: "Nhóm nhỏ, theo sát hơn",
-    body: "Mỗi lớp chỉ khoảng 4–5 học viên để có thời gian sửa phát âm, sửa câu và theo dõi tiến độ từng bạn.",
+    title: "Nhóm nhỏ, sửa kỹ hơn",
+    body: "Mỗi lớp chỉ khoảng 4–5 học viên để có thời gian sửa bài kỹ hơn.",
   },
   {
-    title: "Lộ trình rõ cho người mới",
-    body: "A1 được xây từ phát âm, từ vựng và ngữ pháp cơ bản để học viên hiểu mình đang học gì.",
+    title: "Học theo từng bước",
+    body: "Đi từ phát âm, câu cơ bản đến giao tiếp ngắn, không nhảy quá nhanh.",
   },
   {
-    title: "Không học xong rồi bỏ đó",
-    body: "Sau buổi học có bài tập, tài liệu tổng hợp và hoạt động luyện thêm qua Frenchzone.",
+    title: "Có chỗ để ôn lại",
+    body: "Sau giờ học, bạn vẫn có tài liệu và bài luyện thêm qua Frenchzone.",
   },
 ];
 
 export const teacherIntro =
-  "Lớp được phụ trách bởi Đức và Huy, với định hướng dạy chắc nền tảng cho người mới bắt đầu. Đức và Huy có 16 năm học tiếng Pháp từ lớp 1, đạt DELF B2 từ năm 2019 và đã từng đồng hành, giảng dạy cho hơn 100 học viên ở nhiều độ tuổi và trình độ khác nhau.";
+  "Bọn mình học tiếng Pháp từ lớp 1, có DELF B2 từ năm 2019 và đã hỗ trợ hơn 100 học viên ở nhiều trình độ. Với lớp này, bọn mình ưu tiên cách giải thích dễ hiểu, sửa lỗi trực tiếp và tài liệu rõ ràng để bạn có thể tự ôn ở nhà.";
 
 export const teacherHighlights = [
   "16 năm học tiếng Pháp từ lớp 1",
   "DELF B2 từ năm 2019",
-  "Đã đồng hành/giảng dạy cho hơn 100 học viên",
-  "Theo sát các lỗi dễ gặp: phát âm, chia động từ, đặt câu và phản xạ giao tiếp",
+  "Hơn 100 học viên đã được hỗ trợ",
+  "Sửa kỹ phát âm, chia động từ, đặt câu và phản xạ nói",
 ];
 
 export const teacherMaterials = [
-  "Có giáo án, slides bài giảng, tài liệu ôn tập và bài tập sau từng buổi",
-  "Tài liệu được chọn lọc từ Nouveau Taxi, Édito và các nguồn A1–A2",
-  "Nội dung được điều chỉnh lại theo hướng dễ hiểu, phù hợp với người mới bắt đầu",
+  "Giáo án và slides theo từng buổi",
+  "Bài tập và phần tổng hợp để ôn lại",
+  "Tài liệu chọn lọc từ Nouveau Taxi, Édito và nguồn A1–A2",
+  "Hỗ trợ luyện thêm qua fzone.site",
 ];
 
 export const frenchzonePlatform = {
-  title: "Học trên lớp, ôn lại rõ ràng qua fzone.site",
-  body: "Ngoài bài giảng trực tiếp, học viên có website học tập riêng để làm bài tập, luyện lại nội dung đã học, theo dõi bài sau từng buổi và có thêm tài liệu/hoạt động luyện tập.",
+  title: "Học trên lớp, ôn lại qua fzone.site",
+  body: "Ngoài giờ học, học viên có thêm một nơi để làm bài luyện, xem lại nội dung đã học và giữ nhịp ôn tập.",
   bullets: [
-    "Làm bài tập sau từng buổi học",
-    "Luyện lại nội dung đã học trên lớp",
-    "Theo dõi bài học và phần tổng hợp sau buổi học",
-    "Có thêm tài liệu và hoạt động luyện tập để giữ nhịp học",
+    "Làm bài luyện sau giờ học",
+    "Xem lại nội dung đã học",
+    "Theo dõi bài và phần tổng hợp",
+    "Có thêm tài liệu để tự ôn",
   ],
   cta: "Khám phá fzone.site",
   href: "https://fzone.site",
   disclaimer:
-    "Frenchzone Academy là trang tuyển sinh/lớp học. Nền tảng học chính được phát triển riêng tại fzone.site để hỗ trợ học viên ngoài giờ học.",
+    "Frenchzone Academy là trang tuyển sinh lớp học. fzone.site là nền tảng riêng để hỗ trợ học viên ngoài giờ.",
 };
 
 export const contactMethods: ContactMethod[] = [
@@ -412,20 +412,20 @@ export const studentFeedback = [
 
 export const howClassesWork = [
   {
-    title: "Tư vấn đầu vào",
-    body: "Phụ huynh hoặc học viên gửi nền tảng hiện tại, mục tiêu và lịch rảnh. Đức hoặc Huy tư vấn lớp phù hợp.",
+    title: "Gửi thông tin",
+    body: "Bạn cho bọn mình biết trình độ hiện tại, mục tiêu và lịch rảnh.",
   },
   {
     title: "Học nhóm nhỏ",
-    body: "Mỗi lớp khoảng 4–5 học viên, 90 phút/buổi, online hoặc offline tại Hà Nội tùy nhu cầu của lớp.",
+    body: "Mỗi lớp khoảng 4–5 học viên, 90 phút/buổi.",
   },
   {
-    title: "Sửa lỗi trong buổi học",
-    body: "Giáo viên theo sát phát âm, cách đặt câu, chia động từ và phản xạ giao tiếp cơ bản.",
+    title: "Sửa lỗi trên lớp",
+    body: "Giáo viên nghe, sửa phát âm, câu và phản xạ nói.",
   },
   {
-    title: "Ôn lại sau buổi học",
-    body: "Sau mỗi buổi, học viên có bài tập, tài liệu tổng hợp và hoạt động luyện thêm qua Frenchzone.",
+    title: "Ôn lại ở nhà",
+    body: "Bạn có phần tổng hợp và bài luyện thêm qua Frenchzone.",
   },
 ];
 
@@ -435,12 +435,12 @@ export const faqItems = [
   {
     question: "Chưa học tiếng Pháp bao giờ có học được không?",
     answer:
-      "Có. Lớp A1 được thiết kế cho người mới bắt đầu hoặc mất gốc, đi từ phát âm, từ vựng và ngữ pháp nền tảng.",
+      "Có. Lớp đi từ phát âm, từ vựng và mẫu câu rất cơ bản.",
   },
   {
     question: "Lớp học nhanh hay chậm?",
     answer:
-      "Mục tiêu của lớp không phải học thật nhanh, mà là học chắc từ đầu, hiểu mình đang học gì và dùng được kiến thức đã học.",
+      "Lớp học chậm mà chắc, ưu tiên hiểu bài và dùng được kiến thức.",
   },
   {
     question: "Lớp học online hay offline?",
@@ -450,17 +450,17 @@ export const faqItems = [
   {
     question: "Mỗi lớp có bao nhiêu học viên?",
     answer:
-      "Mỗi lớp chỉ khoảng 4–5 học viên để giáo viên có thể theo sát, sửa lỗi trực tiếp và hỗ trợ từng bạn.",
+      "Mỗi lớp khoảng 4–5 học viên để từng bạn có thời gian nói và được sửa.",
   },
   {
     question: "Có bài tập sau buổi học không?",
     answer:
-      "Có. Học viên sẽ có bài tập, phần tổng hợp nội dung sau buổi học và hoạt động luyện thêm qua Frenchzone.",
+      "Có. Học viên có phần tổng hợp và bài luyện thêm qua Frenchzone.",
   },
   {
     question: "Học A1 xong có thể học tiếp gì?",
     answer:
-      "Khi nền A1 đã chắc, học viên có thể học tiếp A2, B1 hoặc định hướng ôn DELF/TCF sau này tùy mục tiêu.",
+      "Khi đã chắc hơn, bạn có thể học tiếp A2, B1 hoặc định hướng DELF/TCF.",
   },
 ];
 
@@ -469,31 +469,30 @@ export const classPages: Record<LevelKey, ClassPageContent> = {
     ...classCards[0],
     metadata: {
       title:
-        "Lớp tiếng Pháp A1 cho người mới bắt đầu / mất gốc — Frenchzone Academy",
+        "Học tiếng Pháp A1 từ đầu — Frenchzone Academy",
       description:
-        "Lớp tiếng Pháp A1 nhóm nhỏ cùng Đức và Huy cho người mới bắt đầu hoặc mất gốc, học chắc phát âm, từ vựng, ngữ pháp, phản xạ giao tiếp và có bài tập sau buổi học.",
+        "Lớp tiếng Pháp A1 nhóm nhỏ cho bạn mới học hoặc mất gốc, đi từ phát âm đến giao tiếp đơn giản.",
     },
-    pageTitle: "Lớp tiếng Pháp A1 cho người mới bắt đầu / mất gốc",
+    pageTitle: "Học tiếng Pháp A1 từ đầu, chậm mà chắc",
     subtitle:
-      "Học từ nền tảng, không học vội: phát âm, từ vựng cơ bản, ngữ pháp nền tảng, phản xạ giao tiếp, đọc hiểu và viết câu/đoạn ngắn.",
+      "Dành cho bạn mới học, mất gốc hoặc từng học nhưng chưa có hệ thống. Lớp nhóm nhỏ giúp bạn học từ phát âm đến câu giao tiếp đơn giản.",
     positioning:
-      "Lớp A1 phù hợp nếu bạn muốn bắt đầu tiếng Pháp từ con số 0, từng học nhưng mất gốc hoặc cần học lại theo một hệ thống rõ ràng.",
+      "Phù hợp nếu bạn muốn bắt đầu từ số 0, học lại phần đã quên hoặc cần một lớp nhỏ để được sửa kỹ hơn.",
     who: a1SuitableLearners,
     outcomes: [
-      "Đọc và phát âm các âm cơ bản trong tiếng Pháp",
-      "Nắm từ vựng A1 theo chủ đề gần gũi",
-      "Hiểu giống, số, mạo từ, động từ cơ bản và cách đặt câu",
-      "Giao tiếp đơn giản: chào hỏi, giới thiệu bản thân, hỏi đáp ngắn",
-      "Đọc hiểu đoạn ngắn và viết câu/đoạn ngắn đúng trọng tâm",
-      "Có thói quen làm bài, ôn lại và theo dõi tiến độ sau buổi học",
+      "Đọc và phát âm các âm cơ bản",
+      "Tự giới thiệu, hỏi đáp đơn giản",
+      "Nắm từ vựng và mẫu câu quen thuộc",
+      "Viết câu/đoạn ngắn",
+      "Biết cách ôn lại sau buổi học",
     ],
     info: [
-      { label: "Trình độ", value: "A1 cho người mới bắt đầu / mất gốc" },
+      { label: "Trình độ", value: "A1 cho người mới học / mất gốc" },
       { label: "Hình thức", value: "online hoặc offline tại Hà Nội" },
       { label: "Sĩ số", value: "4–5 học viên" },
       { label: "Thời lượng", value: "90 phút/buổi" },
-      { label: "Sau buổi học", value: "có bài tập và phần tổng hợp" },
-      { label: "Hỗ trợ thêm", value: "qua Frenchzone tại fzone.site" },
+      { label: "Sau buổi học", value: "có phần ôn lại" },
+      { label: "Hỗ trợ thêm", value: "qua fzone.site" },
     ],
     cta: "Đăng ký tư vấn lớp A1",
   },

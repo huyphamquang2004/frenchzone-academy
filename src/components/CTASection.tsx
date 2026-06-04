@@ -11,7 +11,7 @@ type CTASectionProps = {
 
 export function CTASection({
   title = "Muốn bắt đầu A1 nhưng chưa chắc lịch học?",
-  body = "Gửi thông tin ngắn gọn, Đức hoặc Huy sẽ tư vấn lộ trình, lịch học phù hợp và kiểm tra trình độ đầu vào nếu cần.",
+  body = "Gửi thông tin ngắn gọn, bọn mình sẽ nhắn lại để tư vấn lịch học và kiểm tra đầu vào nếu cần.",
   primaryHref = "#registration",
   primaryLabel = "Đăng ký tư vấn lớp A1",
   secondaryHref,

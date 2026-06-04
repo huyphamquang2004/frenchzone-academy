@@ -45,7 +45,7 @@ export function RegistrationForm({
   sourcePage,
   defaultTargetLevel = "A1",
   title = "Đăng ký tư vấn lớp A1",
-  intro = "Quý phụ huynh và các bạn học viên có thể để lại thông tin. Đức hoặc Huy sẽ liên hệ để tư vấn lộ trình, lịch học phù hợp và kiểm tra trình độ đầu vào nếu cần.",
+  intro = "Để lại thông tin, bọn mình sẽ nhắn lại để tư vấn lịch học, lộ trình và kiểm tra đầu vào nếu cần.",
 }: RegistrationFormProps) {
   const router = useRouter();
   const [form, setForm] = useState<FormState>(() =>

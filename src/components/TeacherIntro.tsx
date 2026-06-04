@@ -13,10 +13,10 @@ export function TeacherIntro() {
           <Award aria-hidden="true" className="h-8 w-8" />
         </div>
         <p className="mt-6 text-sm font-semibold uppercase tracking-[0.16em] text-primary">
-          Giảng viên và tài liệu
+          Giáo viên và tài liệu
         </p>
         <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
-          Học cùng Đức và Huy
+          Học cùng bọn mình
         </h2>
         <p className="mt-4 leading-8 text-muted">{teacherIntro}</p>
       </div>
@@ -25,7 +25,7 @@ export function TeacherIntro() {
         <div className="rounded-[1.5rem] border border-red-100 bg-red-50 p-5">
           <div className="flex items-center gap-3">
             <CheckCircle2 aria-hidden="true" className="h-5 w-5 text-primary" />
-            <h3 className="font-bold text-primary-dark">Nền tảng giảng dạy</h3>
+            <h3 className="font-bold text-primary-dark">Kinh nghiệm</h3>
           </div>
           <ul className="mt-4 grid gap-3">
             {teacherHighlights.map((item) => (

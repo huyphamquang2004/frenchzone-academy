@@ -206,7 +206,7 @@ export default function Home() {
               >
                 <div className="flex items-center justify-between gap-3">
                   <span className="rounded-full bg-blue-50 px-3 py-1 text-sm font-bold text-accent">
-                    GV {item.teacher}
+                    Người đứng lớp: {item.teacher}
                   </span>
                   <GraduationCap
                     aria-hidden="true"

@@ -9,8 +9,9 @@ export function Footer() {
         <div>
           <p className="text-lg font-bold">Frenchzone Academy</p>
           <p className="mt-3 max-w-xl text-sm leading-6 text-muted">
-            Lớp tiếng Pháp nhóm nhỏ A1, A2, B1 cùng Phạm Quang Huy. Online,
-            có lộ trình rõ ràng, bài tập sau buổi học và hỗ trợ luyện thêm.
+            Lớp tiếng Pháp A1 nhóm nhỏ cho người mới bắt đầu hoặc mất gốc, do
+            Đức và Huy phụ trách. Học chắc từ đầu, có bài tập sau buổi học và
+            hỗ trợ luyện thêm qua fzone.site.
           </p>
         </div>
         <div className="flex flex-col gap-2 text-sm text-muted md:items-end">
@@ -23,6 +24,14 @@ export function Footer() {
           <Link href="/b1" className="hover:text-primary">
             Lớp B1
           </Link>
+          <a
+            href="https://fzone.site"
+            target="_blank"
+            rel="noreferrer"
+            className="hover:text-primary"
+          >
+            fzone.site
+          </a>
           {zaloUrl ? (
             <a
               href={zaloUrl}
@@ -33,7 +42,7 @@ export function Footer() {
               Nhắn Zalo trực tiếp
             </a>
           ) : (
-            <span>Nếu form lỗi, nhắn Zalo trực tiếp cho mình.</span>
+            <span>Nếu form lỗi, nhắn Zalo trực tiếp theo số liên hệ.</span>
           )}
         </div>
       </div>

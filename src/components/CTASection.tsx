@@ -10,10 +10,10 @@ type CTASectionProps = {
 };
 
 export function CTASection({
-  title = "Chưa chắc nên học A1, A2 hay B1?",
-  body = "Gửi mình trình độ hiện tại, mục tiêu học và lịch rảnh. Mình sẽ tư vấn lớp phù hợp trước khi bạn quyết định.",
+  title = "Muốn bắt đầu A1 nhưng chưa chắc lịch học?",
+  body = "Gửi thông tin ngắn gọn, Đức hoặc Huy sẽ tư vấn lộ trình, lịch học phù hợp và kiểm tra trình độ đầu vào nếu cần.",
   primaryHref = "#registration",
-  primaryLabel = "Đăng ký tư vấn miễn phí",
+  primaryLabel = "Đăng ký tư vấn lớp A1",
   secondaryHref,
   secondaryLabel,
 }: CTASectionProps) {

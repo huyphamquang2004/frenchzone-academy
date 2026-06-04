@@ -29,7 +29,7 @@ export function Header() {
 
         <div className="hidden sm:block">
           <ButtonLink href="/#registration" icon="message">
-            Đăng ký tư vấn
+            Tư vấn lớp A1
           </ButtonLink>
         </div>
 
@@ -37,7 +37,7 @@ export function Header() {
           href="/#registration"
           className="rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white sm:hidden"
         >
-          Tư vấn
+          Tư vấn A1
         </Link>
       </div>
     </header>

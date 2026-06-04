@@ -2,8 +2,9 @@
 
 import { FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
-import { Send } from "lucide-react";
+import { Phone, Send } from "lucide-react";
 import type { LevelKey } from "@/lib/content";
+import { contactMethods } from "@/lib/content";
 
 type FormState = {
   fullName: string;
@@ -22,10 +23,11 @@ type RegistrationFormProps = {
   sourcePage: string;
   defaultTargetLevel?: LevelKey | "Chưa chắc";
   title?: string;
+  intro?: string;
 };
 
 const initialState = (
-  defaultTargetLevel: LevelKey | "Chưa chắc" = "Chưa chắc",
+  defaultTargetLevel: LevelKey | "Chưa chắc" = "A1",
 ): FormState => ({
   fullName: "",
   phoneOrZalo: "",
@@ -41,8 +43,9 @@ const initialState = (
 
 export function RegistrationForm({
   sourcePage,
-  defaultTargetLevel = "Chưa chắc",
-  title = "Đăng ký tư vấn miễn phí",
+  defaultTargetLevel = "A1",
+  title = "Đăng ký tư vấn lớp A1",
+  intro = "Quý phụ huynh và các bạn học viên có thể để lại thông tin. Đức hoặc Huy sẽ liên hệ để tư vấn lộ trình, lịch học phù hợp và kiểm tra trình độ đầu vào nếu cần.",
 }: RegistrationFormProps) {
   const router = useRouter();
   const [form, setForm] = useState<FormState>(() =>
@@ -52,6 +55,12 @@ export function RegistrationForm({
   const [success, setSuccess] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const zaloUrl = process.env.NEXT_PUBLIC_ZALO_URL;
+  const submitLabel =
+    defaultTargetLevel === "A2"
+      ? "Đăng ký tư vấn lớp A2"
+      : defaultTargetLevel === "B1"
+        ? "Đăng ký tư vấn lớp B1"
+        : "Đăng ký tư vấn lớp A1";
 
   function updateField<K extends keyof FormState>(key: K, value: FormState[K]) {
     setForm((current) => ({ ...current, [key]: value }));
@@ -117,16 +126,31 @@ export function RegistrationForm({
       id="registration"
       className="rounded-[2rem] border border-line bg-white p-6 shadow-sm shadow-stone-950/5 sm:p-8"
     >
-      <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+      <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr]">
         <div>
           <p className="text-sm font-semibold uppercase tracking-[0.16em] text-primary">
             Đăng ký
           </p>
           <h2 className="mt-2 text-3xl font-bold tracking-tight">{title}</h2>
-          <p className="mt-4 leading-7 text-muted">
-            Điền thông tin ngắn gọn. Mình sẽ liên hệ lại để hỏi thêm mục tiêu
-            học và tư vấn lớp phù hợp.
-          </p>
+          <p className="mt-4 leading-7 text-muted">{intro}</p>
+
+          <div className="mt-6 grid gap-3">
+            {contactMethods.map((contact) => (
+              <div
+                key={contact.value}
+                className="rounded-[1.25rem] border border-line bg-stone-50 p-4"
+              >
+                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted">
+                  {contact.label}
+                </p>
+                <p className="mt-2 flex items-center gap-2 text-lg font-black text-primary-dark">
+                  <Phone aria-hidden="true" className="h-4 w-4" />
+                  {contact.value}
+                </p>
+              </div>
+            ))}
+          </div>
+
           <div className="mt-6 rounded-2xl bg-red-50 p-4 text-sm leading-6 text-primary-dark">
             {zaloUrl ? (
               <a
@@ -135,10 +159,12 @@ export function RegistrationForm({
                 rel="noreferrer"
                 className="font-semibold underline decoration-red-300 underline-offset-4"
               >
-                Nếu form lỗi, nhắn Zalo trực tiếp cho mình.
+                Nếu form lỗi, nhắn Zalo trực tiếp qua liên kết đã cấu hình.
               </a>
             ) : (
-              <span>Nếu form lỗi, nhắn Zalo trực tiếp cho mình.</span>
+              <span>
+                Nếu form lỗi, nhắn Zalo trực tiếp theo số điện thoại ở trên.
+              </span>
             )}
           </div>
         </div>
@@ -234,7 +260,7 @@ export function RegistrationForm({
               onChange={(event) =>
                 updateField("currentLevel", event.target.value)
               }
-              placeholder="Ví dụ: chưa học bao giờ, từng học A1, đang khoảng A2..."
+              placeholder="Ví dụ: chưa học bao giờ, từng học nhưng mất gốc, đang học ở trường..."
               required
             />
           </Field>
@@ -246,7 +272,7 @@ export function RegistrationForm({
               onChange={(event) =>
                 updateField("learningGoal", event.target.value)
               }
-              placeholder="Ví dụ: học để giao tiếp, du học, thi DELF B1..."
+              placeholder="Ví dụ: học chắc từ đầu, củng cố kiến thức ở trường, chuẩn bị nền A1–A2..."
               required
             />
           </Field>
@@ -258,7 +284,7 @@ export function RegistrationForm({
               onChange={(event) =>
                 updateField("availableTime", event.target.value)
               }
-              placeholder="Ví dụ: tối thứ 2/4, cuối tuần..."
+              placeholder="Ví dụ: muốn học Thứ 2/4 19h00, Thứ 3/7 15h00 hoặc ghi lịch rảnh khác…"
               required
             />
           </Field>
@@ -268,7 +294,7 @@ export function RegistrationForm({
               className="field-input min-h-24"
               value={form.notes}
               onChange={(event) => updateField("notes", event.target.value)}
-              placeholder="Bạn có thể ghi thêm mục tiêu, thời hạn hoặc câu hỏi."
+              placeholder="Bạn có thể ghi thêm câu hỏi, hình thức học mong muốn hoặc thông tin phụ huynh cần trao đổi."
             />
           </Field>
 
@@ -289,7 +315,7 @@ export function RegistrationForm({
             className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition hover:bg-primary-dark disabled:cursor-not-allowed disabled:opacity-70"
           >
             <Send aria-hidden="true" className="h-4 w-4" />
-            {isSubmitting ? "Đang gửi..." : "Đăng ký tư vấn miễn phí"}
+            {isSubmitting ? "Đang gửi..." : submitLabel}
           </button>
         </form>
       </div>

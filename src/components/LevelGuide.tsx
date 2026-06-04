@@ -7,9 +7,9 @@ export function LevelGuide() {
   return (
     <section className="space-y-6">
       <SectionHeading
-        eyebrow="Chọn đúng điểm bắt đầu"
-        title="Nên bắt đầu từ lớp nào?"
-        body="Nếu chưa chắc trình độ, bạn có thể gửi form tư vấn. Mình sẽ xem mục tiêu, nền tảng hiện tại và gợi ý lớp phù hợp."
+        eyebrow="Sau nền tảng A1"
+        title="A1 là bước đầu cho lộ trình dài hơn"
+        body="Trang chủ đang tập trung tuyển sinh A1, nhưng các route A2/B1 vẫn có sẵn để học viên xem lộ trình tiếp theo khi nền tảng đã chắc."
       />
 
       <div className="grid gap-4 md:grid-cols-3">

@@ -1,4 +1,4 @@
-import { CheckCircle2 } from "lucide-react";
+import { CalendarDays, CheckCircle2, Clock3, GraduationCap } from "lucide-react";
 import { ButtonLink } from "@/components/ButtonLink";
 import { CTASection } from "@/components/CTASection";
 import { CredibilityStats } from "@/components/CredibilityStats";
@@ -10,20 +10,22 @@ import { RegistrationForm } from "@/components/RegistrationForm";
 import { SectionHeading } from "@/components/SectionHeading";
 import { TeacherIntro } from "@/components/TeacherIntro";
 import type { ClassPageContent } from "@/lib/content";
-import { howClassesWork } from "@/lib/content";
+import { a1ClassSchedule, howClassesWork } from "@/lib/content";
 
 type ClassDetailPageProps = {
   content: ClassPageContent;
 };
 
 export function ClassDetailPage({ content }: ClassDetailPageProps) {
+  const isA1 = content.level === "A1";
+
   return (
     <main>
       <section className="border-b border-line bg-gradient-to-br from-white via-red-50/60 to-blue-50/70">
         <div className="container-page grid gap-10 py-14 md:grid-cols-[1.1fr_0.9fr] md:items-center md:py-20">
           <div>
             <span className="inline-flex rounded-full border border-red-100 bg-white px-4 py-2 text-sm font-bold text-primary shadow-sm shadow-stone-950/5">
-              Tuyển sinh lớp {content.level}
+              {isA1 ? "Khai giảng lớp A1" : `Tuyển sinh lớp ${content.level}`}
             </span>
             <p className="mt-6 text-sm font-semibold uppercase tracking-[0.16em] text-primary">
               Frenchzone Academy
@@ -38,8 +40,11 @@ export function ClassDetailPage({ content }: ClassDetailPageProps) {
               <ButtonLink href="#registration" icon="message">
                 {content.cta}
               </ButtonLink>
-              <ButtonLink href="/#level-guide" variant="secondary">
-                Chọn lớp phù hợp
+              <ButtonLink
+                href={isA1 ? "/#class-schedule" : "/#level-guide"}
+                variant="secondary"
+              >
+                {isA1 ? "Xem lịch lớp A1" : "Xem lộ trình tiếp theo"}
               </ButtonLink>
             </div>
           </div>
@@ -84,7 +89,7 @@ export function ClassDetailPage({ content }: ClassDetailPageProps) {
       </section>
 
       <div className="container-page space-y-14 py-14 md:py-20">
-        <CredibilityStats />
+        {isA1 ? <CredibilityStats /> : null}
 
         <section className="rounded-[2rem] border border-line bg-white p-6 shadow-sm shadow-stone-950/5 md:p-8">
           <p className="text-sm font-semibold uppercase tracking-[0.16em] text-primary">
@@ -100,11 +105,23 @@ export function ClassDetailPage({ content }: ClassDetailPageProps) {
           <InfoList title="Sau khóa học, bạn sẽ" items={content.outcomes} />
         </section>
 
+        {isA1 ? <A1SchedulePreview /> : null}
+
         <CTASection
+          title={
+            isA1
+              ? "Muốn học A1 nhưng chưa chắc lịch nào phù hợp?"
+              : `Cần tư vấn lớp ${content.level}?`
+          }
+          body={
+            isA1
+              ? "Đức hoặc Huy sẽ tư vấn lộ trình, lịch học và kiểm tra trình độ đầu vào nếu cần."
+              : "Gửi thông tin ngắn gọn để được tư vấn lớp phù hợp với nền tảng và mục tiêu hiện tại."
+          }
           primaryHref="#registration"
           primaryLabel={content.cta}
-          secondaryHref="/#registration"
-          secondaryLabel="Nhắn mình để được tư vấn"
+          secondaryHref={isA1 ? "/#class-schedule" : "/#registration"}
+          secondaryLabel={isA1 ? "Xem lịch lớp A1" : "Nhắn để được tư vấn"}
         />
 
         <LevelGuide />
@@ -112,7 +129,11 @@ export function ClassDetailPage({ content }: ClassDetailPageProps) {
         <section className="space-y-6">
           <SectionHeading
             eyebrow="Cách lớp học diễn ra"
-            title="Học gọn, rõ việc, có luyện thêm"
+            title={
+              isA1
+                ? "Từ tư vấn đầu vào đến ôn lại sau buổi học"
+                : "Học gọn, rõ việc, có luyện thêm"
+            }
           />
           <div className="grid gap-4 md:grid-cols-4">
             {howClassesWork.map((step, index) => (
@@ -143,6 +164,41 @@ export function ClassDetailPage({ content }: ClassDetailPageProps) {
         <FAQ />
       </div>
     </main>
+  );
+}
+
+function A1SchedulePreview() {
+  return (
+    <section className="space-y-6">
+      <SectionHeading
+        eyebrow="Lịch đang mở"
+        title="Các khung giờ A1 có thể đăng ký"
+        body="Lịch cụ thể sẽ được chốt theo nhu cầu của lớp. Mỗi lớp chỉ khoảng 4–5 học viên để giáo viên theo sát từng bạn."
+      />
+      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        {a1ClassSchedule.map((item) => (
+          <article
+            key={`${item.days}-${item.time}-${item.teacher}`}
+            className="rounded-[1.5rem] border border-line bg-white p-5 shadow-sm shadow-stone-950/5"
+          >
+            <div className="flex items-center justify-between gap-3">
+              <span className="rounded-full bg-blue-50 px-3 py-1 text-sm font-bold text-accent">
+                GV {item.teacher}
+              </span>
+              <GraduationCap aria-hidden="true" className="h-5 w-5 text-primary" />
+            </div>
+            <p className="mt-5 flex items-center gap-3 font-bold">
+              <CalendarDays aria-hidden="true" className="h-5 w-5 text-primary" />
+              {item.days}
+            </p>
+            <p className="mt-3 flex items-center gap-3 text-muted">
+              <Clock3 aria-hidden="true" className="h-5 w-5 text-accent" />
+              {item.time}
+            </p>
+          </article>
+        ))}
+      </div>
+    </section>
   );
 }
 

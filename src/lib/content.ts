@@ -383,7 +383,7 @@ export const frenchzonePlatform = {
     "Có thêm tài liệu để tự ôn",
   ],
   cta: "Khám phá fzone.site",
-  href: "https://fzone.site",
+  href: "https://test.fzone.site",
   disclaimer:
     "Frenchzone Academy là trang tuyển sinh lớp học. fzone.site là nền tảng riêng để hỗ trợ học viên ngoài giờ.",
 };
